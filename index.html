@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>-- Restaurant Retro --</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <img src="/assets/logo.png" alt="Logo" class="logo">
+    <!-- <h2 id="resto"><span>R</span>esto <span>R</span>etro</h2> -->
+    <nav>
+      <a href="index.html" class="sidebar-btn"><i class="fas fa-home"></i> Tableau de bord</a>
+      <a href="menu.html" class="sidebar-btn"><i class="fas fa-utensils"></i> Menu</a>
+      <a href="commandes.html" class="sidebar-btn"><i class="fas fa-receipt"></i> Commandes</a>
+      <a href="reservation.html" class="sidebar-btn"><i class="fas fa-calendar-check"></i> Réservations</a>
+      <a href="historique.html" class="sidebar-btn"><i class="fas fa-history"></i> Historique</a>
+    </nav>
+  </aside>
+
+  <main>
+    <header style="position: relative;">
+      <h1>Tableau de Bord</h1>
+      <span id="heure-actuelle" class="heure-flottante"></span>
+      <p class="welcome">Enregistrez et suivez les commandes de vos clients.</p>
+    </header>
+
+    <section class="stats">
+      <div class="card">
+        <i class="fas fa-utensils"></i>
+        <h3>Plats</h3>
+        <p id="stats-plats">0</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-receipt"></i>
+        <h3>Commandes</h3>
+        <p id="stats-commandes">0</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-calendar-check"></i>
+        <h3>Réservations</h3>
+        <p id="stats-reservations">0</p>
+      </div>
+    </section>
+
+    <section class="dashboard-tables">
+      <div class="dashboard-table">
+        <h2>Dernières commandes</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Client</th>
+              <th>Total</th>
+              <th>Statut</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>19/06/2025</td>
+              <td>Mr Gbilimou</td>
+              <td>62 €</td>
+              <td><span class="badge badge-success">Payée</span></td>
+            </tr>
+            <tr>
+              <td>18/06/2025</td>
+              <td>Honoré  Traoré</td>
+              <td>28 €</td>
+              <td><span class="badge badge-warning">En attente</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <a href="commandes.html" class="see-more">Voir toutes les commandes</a>
+      </div>
+      <div class="dashboard-table">
+        <h2>Réservations du jour</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Heure</th>
+              <th>Nom</th>
+              <th>Personnes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>21:30</td>
+              <td>Mr Gbilimou</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>19:00</td>
+              <td>Myriam MD</td>
+              <td>2</td>
+            </tr>
+          </tbody>
+        </table>
+        <a href="reservation.html" class="see-more">Voir toutes les réservations</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Restaurant Retro. Tous droits réservés.</p>
+    </footer>
+  </main>
+
+  <script src="/assets/js/dashboard.js"></script>
+  <script src="/assets/js/reservations.js"></script>
+  <script src="/assets/js/orders.js"></script>
+  <script src="/assets/js/history.js"></script>
+  <script src="/assets/js/menu.js"></script>
+</body>
+</html>

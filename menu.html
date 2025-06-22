@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - Restaurant Retro</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <img src="/assets/logo.png" alt="Logo" class="logo">
+    <!-- <h2 id="resto"><span>R</span>esto <span>R</span>etro</h2> -->
+    <nav>
+      <button onclick="goTo('index.html')"><i class="fas fa-home"></i> Tableau de bord</button>
+      <button onclick="goTo('menu.html')" class="active"><i class="fas fa-utensils"></i> Menu</button>
+      <button onclick="goTo('commandes.html')"><i class="fas fa-receipt"></i> Commandes</button>
+      <button onclick="goTo('reservation.html')"><i class="fas fa-calendar-check"></i> Réservations</button>
+      <button onclick="goTo('historique.html')"><i class="fas fa-history"></i> Historique</button>
+    </nav>
+  </aside>
+  
+  <main>
+    <header>
+      <h1>Gestion du menu</h1>
+      <button id="btn-ajouter-plat" class="btn-main"><i class="fas fa-plus"></i> Ajouter un plat</button>
+    </header>
+
+    <section>
+      <table class="menu-table">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Nom</th>
+            <th>Catégorie</th>
+            <th>Description</th>
+            <th>Prix</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="menu-list">
+          <!-- Les plats seront injectés ici par JS -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Modal pour ajouter/modifier un plat -->
+  <div id="modal-plat" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span class="close-modal" id="close-modal">&times;</span>
+      <h2 id="modal-title">Ajouter un plat</h2>
+      <form id="form-plat">
+        <label>Nom du plat</label>
+        <input type="text" id="plat-nom" required>
+        <label>Catégorie</label>
+        <select id="plat-categorie" required>
+          <option value="">Choisir</option>
+          <option value="Entrée">Entrée</option>
+          <option value="Plat">Plat</option>
+          <option value="Dessert">Dessert</option>
+          <option value="Boisson">Boisson</option>
+        </select>
+        <label>Description</label>
+        <textarea id="plat-description" rows="2"></textarea>
+        <label>Prix (€)</label>
+        <input type="number" id="plat-prix" min="0" step="0.01" required>
+        <label>Image (URL)</label>
+        <input type="url" id="plat-image">
+        <button type="submit" class="btn-main">Enregistrer</button>
+      </form>
+    </div>
+  </div>
+  
+  <script src="/assets/js/dashboard.js"></script>
+  <script src="/assets/js/reservations.js"></script>
+  <script src="/assets/js/orders.js"></script>
+  <script src="/assets/js/history.js"></script>
+  <script src="/assets/js/menu.js"></script>
+</body>
+</html>

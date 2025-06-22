@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commandes - Restaurant Retro</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <aside class="sidebar">
+    <img src="/assets/logo.png" alt="Logo" class="logo">
+    <!-- <h2 id="resto"><span>R</span>esto <span>R</span>etro</h2> -->
+    <nav>
+      <a href="index.html" class="sidebar-btn"><i class="fas fa-home"></i> Tableau de bord</a>
+      <a href="menu.html" class="sidebar-btn"><i class="fas fa-utensils"></i> Menu</a>
+      <a href="commandes.html" class="sidebar-btn active"><i class="fas fa-receipt"></i> Commandes</a>
+      <a href="reservation.html" class="sidebar-btn"><i class="fas fa-calendar-check"></i> Réservations</a>
+      <a href="historique.html" class="sidebar-btn"><i class="fas fa-history"></i> Historique</a>
+    </nav>
+  </aside>
+
+  <main>
+    <header style="position: relative;">
+      <h1>Gestion des commandes</h1>
+      <span id="heure-actuelle" class="heure-flottante"></span>
+      <p class="welcome">Enregistrez et suivez les commandes de vos clients.</p>
+    </header>
+
+    <section>
+      <form id="form-commande" class="reservation-form" autocomplete="off">
+        <label for="cmd-client">Nom du client</label>
+        <input type="text" id="cmd-client" required placeholder="Nom du client">
+
+        <label for="cmd-plats">Plats commandés</label>
+        <input type="text" id="cmd-plats" required placeholder="Ex: Pizza, Burger, Salade">
+
+        <label for="cmd-quantites">Quantités (séparées par virgule, ex: 1,2,1)</label>
+        <input type="text" id="cmd-quantites" required placeholder="Ex: 1,2,1">
+
+        <label for="cmd-paiement">Paiement</label>
+        <select id="cmd-paiement" required>
+          <option value="Payée">Payée</option>
+          <option value="En attente">En attente</option>
+        </select>
+
+        <button type="submit" class="btn-main"><i class="fas fa-check"></i> Enregistrer la commande</button>
+      </form>
+    </section>
+
+    <section style="margin-top:32px;">
+      <h2>Commandes du jour</h2>
+      <div class="table-responsive">
+        <table class="menu-table">
+          <thead>
+            <tr>
+              <th>Heure</th>
+              <th>Client</th>
+              <th>Détail</th>
+              <th>Paiement</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="commande-list">
+            <!-- Les commandes seront injectées ici par JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <footer>
+      <p>&copy; 2025 Restaurant Retro. Tous droits réservés.</p>
+    </footer>
+  </main>
+
+  <script src="/assets/js/dashboard.js"></script>
+  <script src="/assets/js/reservations.js"></script>
+  <script src="/assets/js/orders.js"></script>
+  <script src="/assets/js/history.js"></script>
+  <script src="/assets/js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Réservations - Restaurant Retro</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <img src="/assets/logo.png" alt="Logo" class="logo">
+    <!-- <h2 id="resto"><span>R</span>esto <span>R</span>etro</h2> -->
+    <nav>
+      <a href="index.html" class="sidebar-btn"><i class="fas fa-home"></i> Tableau de bord</a>
+      <a href="menu.html" class="sidebar-btn"><i class="fas fa-utensils"></i> Menu</a>
+      <a href="commandes.html" class="sidebar-btn"><i class="fas fa-receipt"></i> Commandes</a>
+      <a href="reservation.html" class="sidebar-btn"><i class="fas fa-calendar-check"></i> Réservations</a>
+      <a href="historique.html" class="sidebar-btn"><i class="fas fa-history"></i> Historique</a>
+    </nav>
+  </aside>
+
+  <main>
+    <header style="position: relative;">
+      <h1>Gestion de reservation</h1>
+      <span id="heure-actuelle" class="heure-flottante"></span>
+      <p class="welcome">Enregistrez et suivez les commandes de vos clients.</p>
+    </header>
+
+    <section>
+      <form id="form-reservation" class="reservation-form" autocomplete="off">
+        <div id="reservation-message" style="min-height:22px;margin-bottom:8px;font-size:1em;"></div>
+        <label for="res-nom">Nom</label>
+        <input type="text" id="res-nom" required placeholder="Nom du client" autocomplete="off">
+
+        <label for="res-date">Date</label>
+        <input type="date" id="res-date" required>
+
+        <label for="res-heure">Heure</label>
+        <input type="time" id="res-heure" required>
+
+        <label for="res-personnes">Nombre de personnes</label>
+        <input type="number" id="res-personnes" min="1" max="20" required placeholder="Ex: 2">
+
+        <button type="submit" class="btn-main"><i class="fas fa-check"></i> Réserver</button>
+      </form>
+    </section>
+
+    <section style="margin-top:32px;">
+      <h2>Réservations du jour</h2>
+      <div class="table-responsive">
+        <table class="menu-table">
+          <thead>
+            <tr>
+              <th>Heure</th>
+              <th>Nom</th>
+              <th>Personnes</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="reservation-list">
+            <!-- Les réservations seront injectées ici par JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <footer>
+      <p>&copy; 2025 Restaurant Retro. Tous droits réservés.</p>
+    </footer>
+  </main>
+
+  <script src="/assets/js/dashboard.js"></script>
+  <script src="/assets/js/reservations.js"></script>
+  <script src="/assets/js/orders.js"></script>
+  <script src="/assets/js/history.js"></script>
+  <script src="/assets/js/menu.js"></script>
+</body>
+</html>

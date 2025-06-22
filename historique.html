@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historique - Restaurant Retro</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <aside class="sidebar">
+    <img src="/assets/logo.png" alt="Logo" class="logo">
+    <!-- <h2 id="resto"><span>R</span>esto <span>R</span>etro</h2> -->
+    <nav>
+      <a href="index.html" class="sidebar-btn"><i class="fas fa-home"></i> Tableau de bord</a>
+      <a href="menu.html" class="sidebar-btn"><i class="fas fa-utensils"></i> Menu</a>
+      <a href="commandes.html" class="sidebar-btn"><i class="fas fa-receipt"></i> Commandes</a>
+      <a href="reservation.html" class="sidebar-btn"><i class="fas fa-calendar-check"></i> Réservations</a>
+      <a href="historique.html" class="sidebar-btn active"><i class="fas fa-history"></i> Historique</a>
+    </nav>
+  </aside>
+
+  <main>
+    <header style="position: relative;">
+      <h1>Gestion de l'historique</h1>
+      <span id="heure-actuelle" class="heure-flottante"></span>
+      <p class="welcome">Enregistrez et suivez les commandes de vos clients.</p>
+    </header>
+
+    <section style="margin-top:32px;">
+      <h2>Historique</h2>
+      <button onclick="location.reload()" class="btn-main" style="margin-bottom:12px;"><i class="fas fa-sync"></i> Rafraîchir l'historique</button>
+      <div class="table-responsive">
+        <table class="menu-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Heure</th>
+              <th>Client</th>
+              <th>Détail</th>
+              <th>Paiement</th>
+            </tr>
+          </thead>
+          <tbody id="history-list">
+            <!-- L'historique sera injecté ici par JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <footer>
+      <p>&copy; 2025 Restaurant Retro. Tous droits réservés.</p>
+    </footer>
+  </main>
+
+  <script src="/assets/js/dashboard.js"></script>
+  <script src="/assets/js/reservations.js"></script>
+  <script src="/assets/js/orders.js"></script>
+  <script src="/assets/js/history.js"></script>
+  <script src="/assets/js/menu.js"></script>
+</body>
+</html>
